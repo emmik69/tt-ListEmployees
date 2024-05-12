@@ -1,0 +1,26 @@
+.container {
+  background-color: #292929;
+}
+.filter {
+  & h1 {
+    color: #f5f5f5;
+  }
+
+  & input {
+    background-color: #292929;
+  }
+}
+.dropdowns {
+  & span {
+    color: #f5f5f5;
+  }
+}
+.interlayer {
+  background-color: #3e3e3e;
+  color: #f5f5f5;
+
+  & li {
+    background-color: #292929;
+    background-image: url('../../assets/deleteFilterDark.png');
+  }
+}
