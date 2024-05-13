@@ -1,78 +1,12 @@
 .container {
   width: 100%;
+  padding-bottom: 16px;
+  transition: background-color 0.2s ease-in-out;
 }
 .nav {
   column-gap: 16px;
   padding: 28px 180px;
-  margin-bottom: 16px;
   color: #b0b0b0;
   font-weight: 500;
   font-size: 18px;
-}
-.filter {
-  row-gap: 28px;
-  padding: 0 180px;
-  margin-bottom: 28px;
-
-  & h1 {
-    font-weight: 700;
-    font-size: 40px;
-  }
-
-  & input {
-    outline: none;
-    padding: 10px;
-    border-radius: 5px;
-    border: 0.5px solid #b0b0b0;
-
-    &:focus,
-    &:active {
-      border-color: #155da4;
-    }
-
-    &::placeholder {
-      color: #b0b0b0;
-    }
-  }
-}
-.dropdowns {
-  column-gap: 32px;
-
-  & span {
-    font-weight: 400;
-    font-size: 20px;
-  }
-}
-.interlayer {
-  width: 100%;
-  padding: 16px 180px;
-
-  & h2 {
-    margin-right: 40px;
-    line-height: 23px;
-    font-weight: 500;
-    font-size: 20px;
-  }
-
-  & ul {
-    column-gap: 24px;
-  }
-
-  & li {
-    padding: 10px;
-    padding-left: 30px;
-    border-radius: 5px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    line-height: 19px;
-  }
-
-  & button {
-    padding: 12px 48px;
-    border: none;
-    background-color: #155da4;
-    line-height: 21px;
-    font-weight: 600;
-    font-size: 16px;
-  }
 }

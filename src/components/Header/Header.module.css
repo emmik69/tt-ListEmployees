@@ -3,6 +3,7 @@
   z-index: 2;
   width: 100%;
   padding: 25px 180px;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .mainInfo {
@@ -12,6 +13,7 @@
     font-weight: 400;
     font-size: 18px;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
   }
 
   & a:nth-child(1) {

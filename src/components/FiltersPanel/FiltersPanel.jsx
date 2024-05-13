@@ -1,0 +1,68 @@
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import Dropdown from '../Dropdown/Dropdown';
+import styles from './FiltersPanel.module.css';
+import lightS from './FiltersPanelLight.module.css';
+import darkS from './FiltersPanelDark.module.css';
+import Context from '../../Context/Context';
+
+const FiltersPanel = ({ selectFilters, setSelectFilters }) => {
+  const { theme } = useContext(Context);
+  const styleTheme = theme ? lightS : darkS;
+  const dropdownRef = useRef(null);
+  const [condition, setCondition] = useState('');
+  const post = [
+    'Backend-разработчик',
+    'Аналитик',
+    'Frontend-разработчик',
+    'Менеджер',
+  ];
+  const gender = ['Мужчина', 'Женщина'];
+  const stack = ['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'];
+  const filterList = [
+    { name: 'Должность', options: post },
+    { name: 'Пол', options: gender },
+    { name: 'Стек технологий', options: stack },
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      console.log(dropdownRef.current.contains(event.target));
+      console.log(event.target);
+      if (!dropdownRef.current.contains(event.target)) {
+        setCondition('');
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+  }, []);
+
+  return (
+    <div className={`${styles.filter} ${styleTheme.filter} d-flex flex-column`}>
+      <div className={`d-flex justify-content-between align-items-center`}>
+        <h1>Список сотрудников</h1>
+        <div
+          ref={dropdownRef}
+          className={`${styles.dropdownsContainer} ${styleTheme.dropdownsContainer} d-flex`}
+        >
+          {filterList.map((filter) => (
+            <Dropdown
+              key={filter.name}
+              condition={condition}
+              setCondition={setCondition}
+              text={filter.name}
+              listData={filter.options}
+              selectFilters={selectFilters}
+              setSelectFilters={setSelectFilters}
+            />
+          ))}
+        </div>
+      </div>
+      <input
+        className={`${styles.search} ${styleTheme.search}`}
+        placeholder="Поиск"
+      ></input>
+    </div>
+  );
+};
+
+export default FiltersPanel;

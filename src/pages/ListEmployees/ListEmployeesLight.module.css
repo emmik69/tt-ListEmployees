@@ -1,25 +1,3 @@
 .container {
   background-color: #fff;
 }
-.filter {
-  & h1 {
-    color: #292929;
-  }
-
-  & input {
-  }
-}
-.dropdowns {
-  & span {
-    color: #292929;
-  }
-}
-.interlayer {
-  background-color: #f2f2f2;
-  color: #292929;
-
-  & li {
-    background-color: #fff;
-    background-image: url('../../assets/deleteFilterLight.png');
-  }
-}

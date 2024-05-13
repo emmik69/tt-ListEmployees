@@ -1,0 +1,10 @@
+.mainBtn {
+  color: #f5f5f5;
+}
+.menu {
+  background-color: #292929;
+
+  & li {
+    color: #f5f5f5;
+  }
+}

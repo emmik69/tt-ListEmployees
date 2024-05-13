@@ -1,0 +1,86 @@
+.dropContainer {
+  position: relative;
+}
+.mainBtn {
+  outline: none;
+  padding: 0 34px 0 0;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 20px;
+  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &.temp {
+    color: #155da4;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 32px;
+    height: 9px;
+    top: 7px;
+    background-image: url('../../assets/arrowDrop.png');
+    background-repeat: no-repeat;
+    background-position: 7px center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &.temp::after {
+    transform: rotateX(-180deg);
+  }
+}
+.menu {
+  row-gap: 16px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 267px;
+  padding: 20px;
+  border-top: 1px solid #155da4;
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px) scaleY(0.5);
+  transform-origin: top;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    background-color 0.2s ease-in-out;
+  & li {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  & label {
+    cursor: pointer;
+  }
+
+  & input {
+    appearance: none;
+    width: 19px;
+    height: 19px;
+    border-radius: 2px;
+    border: 1px solid #155da4;
+
+    &:checked {
+      border: 1px solid #155da4;
+      background-color: #155da4;
+      background-image: url('../../assets/checkMark.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  &.visible {
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+  }
+}

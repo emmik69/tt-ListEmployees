@@ -1,0 +1,41 @@
+.interlayer {
+  column-gap: 40px;
+  width: 100%;
+  padding: 16px 180px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  & h2 {
+    min-width: 206px;
+    line-height: 23px;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  & ul {
+    column-gap: 24px;
+  }
+
+  & li {
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    line-height: 19px;
+    transition: background-image 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
+  }
+
+  & button {
+    padding: 12px 48px;
+    border: none;
+    background-color: #155da4;
+    line-height: 21px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+.ulContainer {
+  column-gap: 40px;
+}
