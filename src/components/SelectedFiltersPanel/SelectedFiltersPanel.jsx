@@ -5,7 +5,7 @@ import lightS from './SelectedFiltersPanelLight.module.css';
 import darkS from './SelectedFiltersPanelDark.module.css';
 import Context from '../../Context/Context';
 
-const SelectedFiltersPanel = ({ selectFilters, setSelectFilters }) => {
+const SelectedFiltersPanel = ({ getReq, selectFilters, setSelectFilters }) => {
   const { theme } = useContext(Context);
   const styleTheme = theme ? lightS : darkS;
 
@@ -27,7 +27,7 @@ const SelectedFiltersPanel = ({ selectFilters, setSelectFilters }) => {
           ))}
         </ul>
       </div>
-      <Button>Найти</Button>
+      <Button onClick={getReq}>Найти</Button>
     </div>
   );
 };

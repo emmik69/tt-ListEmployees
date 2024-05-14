@@ -5,19 +5,12 @@ import lightS from './FiltersPanelLight.module.css';
 import darkS from './FiltersPanelDark.module.css';
 import Context from '../../Context/Context';
 
-const FiltersPanel = ({ selectFilters, setSelectFilters }) => {
-  const { theme } = useContext(Context);
+const FiltersPanel = ({ selectFilters, setSelectFilters, setSearchValue }) => {
+  const { theme, post, stack, gender } = useContext(Context);
   const styleTheme = theme ? lightS : darkS;
   const dropdownRef = useRef(null);
   const [condition, setCondition] = useState('');
-  const post = [
-    'Backend-разработчик',
-    'Аналитик',
-    'Frontend-разработчик',
-    'Менеджер',
-  ];
-  const gender = ['Мужчина', 'Женщина'];
-  const stack = ['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'];
+
   const filterList = [
     { name: 'Должность', options: post },
     { name: 'Пол', options: gender },
@@ -26,14 +19,16 @@ const FiltersPanel = ({ selectFilters, setSelectFilters }) => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log(dropdownRef.current.contains(event.target));
-      console.log(event.target);
       if (!dropdownRef.current.contains(event.target)) {
         setCondition('');
       }
     };
 
     document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
 
   return (
@@ -59,6 +54,7 @@ const FiltersPanel = ({ selectFilters, setSelectFilters }) => {
       </div>
       <input
         className={`${styles.search} ${styleTheme.search}`}
+        onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Поиск"
       ></input>
     </div>

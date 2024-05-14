@@ -7,7 +7,16 @@ import Context from '../../Context/Context';
 const AppRouter = () => {
   const [theme, setTheme] = useState(true);
   const revers = () => setTheme(!theme);
-  const value = { theme, revers };
+  const post = [
+    'Frontend-разработчик',
+    'Backend-разработчик',
+    'Аналитик',
+    'Менеджер',
+    'Дизайнер',
+  ];
+  const gender = ['Мужчина', 'Женщина'];
+  const stack = ['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'];
+  const value = { theme, revers, post, stack, gender };
 
   return (
     <Context.Provider value={value}>

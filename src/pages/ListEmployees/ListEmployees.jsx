@@ -6,7 +6,7 @@ import arrow from '../../assets/arrowRight.png';
 import styles from './ListEmployees.module.css';
 import lightS from './ListEmployeesLight.module.css';
 import darkS from './ListEmployeesDark.module.css';
-import Filter from '../../components/Filter/Filter';
+import MainInfo from '../../components/MainInfo/MainInfo';
 
 const ListEmployees = () => {
   const { theme } = useContext(Context);
@@ -22,7 +22,7 @@ const ListEmployees = () => {
           <p>Список сотрудников</p>
         </div>
       </div>
-      <Filter />
+      <MainInfo />
     </>
   );
 };

@@ -1,0 +1,9 @@
+.table {
+  & tbody tr {
+    color: #292929;
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}
